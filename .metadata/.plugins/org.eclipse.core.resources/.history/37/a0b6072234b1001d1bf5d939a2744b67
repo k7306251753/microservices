@@ -1,0 +1,30 @@
+package com.order.krishna.controller;
+
+import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.order.krishna.entity.Payment;
+import com.order.krishna.service.PaymentService;
+
+@RestController
+@RequestMapping("/paymentService")
+public class PaymentController {
+	@Autowired
+	private PaymentService paymentService;
+
+	@PostMapping("/dopayment")
+	public ResponseEntity<Payment> savePayment(@RequestBody Payment payment) {
+		System.out.println(payment.getPaymentStatus());
+		return new ResponseEntity<Payment>(paymentService.doPayment(payment), HttpStatus.ACCEPTED);
+
+	}
+
+	 
+}

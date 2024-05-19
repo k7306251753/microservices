@@ -1,0 +1,11 @@
+package com.order.neeli.repositry;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.order.neeli.entity.Order;
+
+public interface OderRepositry  extends JpaRepository<Order, Integer>{
+
+	
+
+}

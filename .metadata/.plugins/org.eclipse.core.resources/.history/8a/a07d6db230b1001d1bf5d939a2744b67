@@ -1,0 +1,16 @@
+package com.order.neeli.dto;
+
+import com.order.neeli.common.Payment;
+import com.order.neeli.entity.Order;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@AllArgsConstructor
+@Data
+@NoArgsConstructor
+public class TransactionRequest {
+	private Order order;
+	private Payment payment; 
+
+}
